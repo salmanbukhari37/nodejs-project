@@ -1,0 +1,19 @@
+{
+  "name": "student",
+  "version": "1.0.0",
+  "description": "We are creating this project for fun and learning",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "nodejs",
+    "express"
+  ],
+  "author": "Salman Bukhari",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
