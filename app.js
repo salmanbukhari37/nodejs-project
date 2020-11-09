@@ -1,23 +1,29 @@
-const { resolveAny } = require("dns");
-const http = require("http");
+const express = require("express");
+const app = express();
 
-http.createServer((req, res) => {
-    res.writeHead(200, {'content-type': "text/html"});
 
-    var url = req.url;
-
-    if( url === "/"){
-        res.write("Welcome to home page");
-        res.end();
+app.get('/get-data', (req, res) => {
+    // fetch db data
+    const dbData = {
+        name: "salman",
+        age: 29,
+        hobbies: ["programming"]
     }
 
-    if( url === "/about-us") {
-        res.write("Welcome to About us page");
-        res.end();
+    res.send(dbData);
+})
+
+app.get('/get-cars', (req, res) => {
+    const dbCarData = {
+        name: "Honda Civic",
+        color: "Black",
+        transmission: "automatic"
     }
 
-    // res.write('Hey I also called now')
+    res.send(dbCarData);
+})
 
-}).listen(3000, function () {
-    console.log('Server has been started on port 3000');
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is listening at port ${port}`);
 })
